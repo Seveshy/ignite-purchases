@@ -6,6 +6,7 @@ import path from 'node:path';
 
 import { DatabaseModule } from 'src/database/database.module';
 import { ProductsResolver } from 'src/graphql/resolvers/products.resolver';
+import { ProductService } from 'src/services/products.service';
 @Module({
   imports: [
     ConfigModule.forRoot(),
@@ -16,7 +17,8 @@ import { ProductsResolver } from 'src/graphql/resolvers/products.resolver';
     }),
   ],
   providers: [
-    ProductsResolver
+    ProductsResolver,
+    ProductService
   ],
 })
 export class HttpModule {}
