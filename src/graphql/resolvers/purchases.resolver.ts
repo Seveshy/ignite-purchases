@@ -11,7 +11,7 @@ export class PurchasesResolver {
   constructor(private purchaseService: PurchasesService) {}
 
   @Query(() => [Purchase])
- // @UseGuards(AuthorizationGuard)
+  @UseGuards(AuthorizationGuard)
   purchases() {
     return this.purchaseService.listAllPurchases();
   }

@@ -17,7 +17,7 @@ type Purchase {
 """Available purchase statuses"""
 enum PurchaseStatus {
   PEDING
-PEDING  APPROVED
+  APPROVED
   FAILED
 }
 
