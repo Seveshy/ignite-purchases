@@ -7,6 +7,7 @@ import path from 'node:path';
 import { DatabaseModule } from 'src/database/database.module';
 import { ProductsResolver } from 'src/graphql/resolvers/products.resolver';
 import { PurchasesResolver } from 'src/graphql/resolvers/purchases.resolver';
+import { CustomersService } from 'src/services/customers.service';
 import { ProductService } from 'src/services/products.service';
 import { PurchasesService } from 'src/services/purchases.service';
 @Module({
@@ -23,6 +24,7 @@ import { PurchasesService } from 'src/services/purchases.service';
     ProductService,
     PurchasesResolver,
     PurchasesService,
+    CustomersService
   ],
 })
 export class HttpModule {}
