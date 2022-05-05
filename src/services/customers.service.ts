@@ -2,25 +2,25 @@ import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../database/prisma/prisma.service';
 
 interface CreateCustomerParams {
-  id : string;
+  authUserId: string;
 }
 
 @Injectable()
 export class CustomersService {
   constructor(private prisma: PrismaService) {}
 
-  getCustomerByAuthUserId(id: string) {
+  getCustomerByAuthUserId(authUserId: string) {
     return this.prisma.customer.findUnique({
       where: {
-        id,
+        authUserId,
       },
     });
   }
 
-  async createCustomer({ id  }: CreateCustomerParams) {
+  async createCustomer({ authUserId }: CreateCustomerParams) {
     return this.prisma.customer.create({
       data: {
-        id,
+        authUserId,
       },
     });
   }

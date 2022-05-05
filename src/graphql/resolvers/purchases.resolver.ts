@@ -48,7 +48,7 @@ export class PurchasesResolver {
 
     if (!customer) {
       customer = await this.customersService.createCustomer({
-        id: user.sub,
+        authUserId: user.sub,
       });
     }
 
